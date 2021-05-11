@@ -114,9 +114,7 @@ function render(data){
 
 promise.then(
     (data) => {
-        // renderById(data)
-        // console.log(queryString)
-        testRenderById(data)
+        renderById(data)
     },
     (error) => {
      console.log('bad request: ', error);
@@ -124,12 +122,8 @@ promise.then(
   );
 
 
-// function renderById(data){
-//     data.forEach(i =>
-//         $specificFilm.append(`<div>${i.original_title}</div>`))
-// }
 
-function testRenderById(data){
+function renderById(data){
     let pathArray = (window.location.pathname.split('/'))
     for (let i in data){
         console.log(pathArray[3])
