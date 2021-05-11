@@ -18,3 +18,4 @@ function show(req, res){
         res.render('movies/show', {reviews, postId: req.params.id})
     });
 }
+

@@ -10,9 +10,11 @@ const $input = $('input[type="text"]');
 const $new = $('#new');
 const $reset = $('#reset');
 const $form = $('#form');
+const $specificFilm = $('#specificFilm')
+const $filmTitle = $('#filmTitle')
 
 $form.on('submit', handleGetData);
-$reset.on('click', reset);
+// $reset.on('click', reset);
 
 const idList = {
     'castle in the sky': '2baf70d1-42bb-4437-b551-e5fed5a87abe',
@@ -72,7 +74,7 @@ const promise = $.ajax({
 
 promise.then(
   (data) => {
-      console.log(data)
+    //   console.log(data)
       render(data)
   },
   (error) => {
@@ -104,4 +106,22 @@ function render(data){
             </div>
         </div>`));
 }
+
+
+
+promise.then(
+    (data) => {
+        renderById(data)
+    },
+    (error) => {
+     console.log('bad request: ', error);
+    }
+  );
+
+
+function renderById(data){
+    data.forEach(i =>
+        $specificFilm.append(`<div>${i.original_title}</div>`))
+}
+
 
