@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const reviewsCtrl = require('../controllers/index');
+const indexCtrl = require('../controllers/index');
 
-router.get('/', reviewsCtrl.main);
+router.get('/', indexCtrl.main);
 
 module.exports = router;
