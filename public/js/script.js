@@ -1,8 +1,4 @@
-
-
 const url_start = 'https://ghibliapi.herokuapp.com/films/'
-
-
 
 // Elements to touch on DOM using jQuery
 const $title = $('#title');
@@ -48,8 +44,7 @@ function parse(){
             userInput = idList[i]
         }
     }
-}
-
+};
 
 function handleGetData(event){
     event.preventDefault();
@@ -93,8 +88,7 @@ function renderEach(data){
         <div>${data.description}</div>
     </div>`);
 
-}
-
+};
 
 function render(data){
     data.forEach(i => 
@@ -108,8 +102,7 @@ function render(data){
                 </div>
             </div>
         </div>`));
-}
-
+};
 
 
 promise.then(
@@ -121,14 +114,14 @@ promise.then(
     }
   );
 
-
-
 function renderById(data){
     let pathArray = (window.location.pathname.split('/'))
     for (let i in data){
         console.log(pathArray[3])
         if(data[i].id == pathArray[3]){
-            $specificFilm.append(`<div>${data[i].original_title}</div>
+            $specificFilm.append(`
+            <div>${data[i].title}</div>
+            <div>${data[i].original_title}</div>
             <div>${data[i].description}</div>`)
         }
     }
