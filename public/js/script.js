@@ -71,6 +71,7 @@ const promise = $.ajax({
 
 promise.then(
   (data) => {
+      console.log(data)
       render(data)
   },
   (error) => {
@@ -95,7 +96,7 @@ function render(data){
         `<div class="card">
             <div class=row padding>
                 <div class=col-md-4>
-                    <div>${i.title}</div>
+                    <div><a id="link" href="/movies/show/${i.id}">${i.title}<a/></div>
                     <div>${i.original_title}</div>
                     <div>${i.description}</div>
                 </div>
