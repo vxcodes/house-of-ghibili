@@ -1,7 +1,5 @@
 const Review = require('../models/review');
 
-
-
 module.exports = {
     index,
     show,
@@ -16,6 +14,7 @@ function index(req, res){
 function show(req, res){
     Review.find({}, function(err, reviews){
         res.render('movies/show', {reviews, postId: req.params.id})
+
     });
 }
 
