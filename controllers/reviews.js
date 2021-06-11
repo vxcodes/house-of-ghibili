@@ -24,7 +24,7 @@ function show(req, res){
 function create(req, res){
     Review.create(req.body, function(err, reviews){
         console.log(req.body);
-        res.render(`/movies/show/${req.params.id}`, {reviews, postId: req.params.id})
+        res.render(`/movies/show/${req.params.id}}`, {reviews, postId: req.params.id})
     })
 }
 

@@ -21,6 +21,13 @@
     <div id="specificFilm">
     </div>
 
+    <h2>Reviews</h2>
+    <form id="add-comment-form" method="POST" action="/movies/show/<%= postId %>">
+      <label>Review:</label>
+      <textarea name="content"></textarea>
+      <input type="submit" value="Add Review">
+    </form>
+
     <% if(reviews.length) { %>
         <table>
             <thead>
@@ -31,10 +38,15 @@
             </thead>
             <tbody>
                 <% reviews.forEach(function(r){ %>
+                    
                     <tr>
                         <td><%= r.createdAt.toLocaleDateString() %></td>
                         <td><%= r.content %></td>
+                        <td><form action="<%=reviews._id %>?_method=DELETE" method="POST">
+                            <button class="btn btn-outline-secondary btn-sm" type="submit">delete</button>
+                        </form></td>
                     </tr>
+                
             <% }); %>
             </tbody>
         </table>
@@ -42,19 +54,5 @@
         <h5>No reviews yet</h5>
    <% } %>
 
-   <h2>Reviews</h2>
-   <form id="add-comment-form" method="POST" action="/movies/show/<%= postId %>">
-     <label>Review:</label>
-     <textarea name="content"></textarea>
-     <input type="submit" value="Add Review">
-   </form>
-   <div id="show-container">
-    <% reviews.forEach(function(review){ %>
-      <p><%= review.content %></p>
-      <form action="<%=reviews._id %>?_method=DELETE" method="POST">
-        <button class="btn btn-outline-secondary btn-sm" type="submit">delete</button>
-      </form>
-    <% }) %>
-  </div>
 </body>
 </html>

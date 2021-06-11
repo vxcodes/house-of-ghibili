@@ -1,7 +1,10 @@
 #enter-page{
-    /* background-image: url('/public/imgs/main-background.png'); */
+    background-image: url('/public/imgs/main.png');
+    background-size: cover;
+    background-color: palevioletred;
+    padding-top: 500px;
+    text-align: center;
     font-size: 20px;
-    background-color: blue;
 }
 
 #film {
