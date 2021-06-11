@@ -1,3 +1,9 @@
+#enter-page{
+    /* background-image: url('/public/imgs/main-background.png'); */
+    font-size: 20px;
+    background-color: blue;
+}
+
 #film {
     display: grid;
     grid-template-columns: 500px 500px 500px;
@@ -16,3 +22,4 @@ body {
 .card {
     background-color: #abb7b7;
 }
+
